@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <form #addProduct="ngForm" action="/action_page.php" enctype="multipart/form-data"
+  (ngSubmit)="submit(addProduct.value)">
+    <div class="row center">
+      <h2>Add a Product</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="Name" ngModel>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label>price</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="price" ngModel>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="category">category</label>
+      </div>
+      <div class="col-75">
+        <select id="category" name="category" ngModel>
+          <option value="pant">pants</option>
+          <option value="top">tops</option>
+          <option value="jeans">jeans</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">size</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="size" ngModel>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label>colour</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="colour" ngModel>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="Availability">Availability</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="Availability" name="Availability" ngModel>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="image">image</label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="image" name="image" ngModel (change)="handleFileInput($event)">
+      </div>
+    </div>
+
+    
+    <div class="row justify-content-center">
+      <input type="submit" value="Submit" style="background-color: grey; color: white; width: 150px;" (click)="testSubmit()">
+
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
